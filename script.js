@@ -56,6 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
         activatePanel(node.dataset.panelTarget);
       });
     });
+
+    const handleHash = () => {
+      if (window.location.hash === '#tento-web') {
+        activatePanel('tento-web');
+        const target = document.getElementById('panel-tento-web');
+        if (target) {
+          requestAnimationFrame(() => {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+        }
+      }
+    };
+
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
   }
 
   const tabButtons = document.querySelectorAll('[role="tab"][data-tab]');
