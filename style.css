@@ -1,0 +1,165 @@
+/* Custom CSS — animations + minor overrides
+   Most styling lives in Tailwind utility classes in index.html */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: #2E7D5B;
+  color: white;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #2E7D5B;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* AI tree diagram — connectors */
+.ai-tree-trunk {
+  width: 2px;
+  height: 28px;
+  background-color: #E5E5E3;
+  margin: 0 auto;
+  transition: background-color 0.25s ease;
+}
+
+.ai-tree-split {
+  height: 2px;
+  background-color: #E5E5E3;
+  width: 50%;
+  margin: 0 auto;
+  transition: background-color 0.25s ease;
+}
+
+.ai-tree-up-line {
+  position: absolute;
+  top: -20px;
+  left: 25%;
+  width: 2px;
+  height: 20px;
+  background-color: #E5E5E3;
+  transform: translateX(-50%);
+  transition: background-color 0.25s ease;
+}
+
+.ai-tree-up-line-right {
+  left: 75%;
+}
+
+/* Interactive AI tree nodes */
+.ai-node {
+  font: inherit;
+  text-align: center;
+  position: relative;
+}
+
+.ai-node:hover {
+  border-color: #2E7D5B;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(46, 125, 91, 0.08);
+}
+
+.ai-node.active {
+  border-color: #2E7D5B;
+  border-width: 2px;
+  box-shadow: 0 4px 16px rgba(46, 125, 91, 0.15);
+}
+
+.ai-node.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: #FAFAF9;
+  border-right: 2px solid #2E7D5B;
+  border-bottom: 2px solid #2E7D5B;
+}
+
+.ai-node-root.active::after {
+  bottom: -8px;
+  width: 12px;
+  height: 12px;
+}
+
+.ai-node:not(.active) p:nth-child(2) {
+  color: #6B6B6B;
+}
+
+.ai-node.active p:nth-child(2) {
+  color: #1A1A1A;
+}
+
+/* AI panel transition */
+.ai-panel {
+  animation: aiPanelFadeIn 0.3s ease-out;
+}
+
+@keyframes aiPanelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-node,
+  .ai-node:hover {
+    transform: none;
+    transition: none;
+  }
+  .ai-panel {
+    animation: none;
+  }
+}
+
+@media print {
+  header, footer, #mobile-menu, [href^="mailto"], [href^="tel"] {
+    display: none !important;
+  }
+  body {
+    color: black;
+    background: white;
+  }
+  section {
+    page-break-inside: avoid;
+  }
+}

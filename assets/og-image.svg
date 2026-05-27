@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <style>
+      .bg { fill: #FAFAF9; }
+      .accent-bar { fill: #2E7D5B; }
+      .text-primary { font-family: 'Inter', system-ui, sans-serif; fill: #1A1A1A; }
+      .text-accent { font-family: 'Inter', system-ui, sans-serif; fill: #2E7D5B; }
+      .text-muted { font-family: 'Inter', system-ui, sans-serif; fill: #6B6B6B; }
+      .mono { font-family: 'JetBrains Mono', monospace; fill: #6B6B6B; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" class="bg"/>
+
+  <rect x="0" y="0" width="12" height="630" class="accent-bar"/>
+
+  <text x="80" y="160" class="text-primary" font-size="64" font-weight="700">Kristina Kumberová</text>
+
+  <text x="80" y="210" class="mono" font-size="22" font-weight="500">Product Manager</text>
+
+  <text x="80" y="340" class="text-primary" font-size="52" font-weight="600">Produktový manažer s AI v praxi</text>
+  <text x="80" y="410" class="text-accent" font-size="52" font-weight="600">10 let v digitálních produktech.</text>
+
+  <text x="80" y="560" class="mono" font-size="20">kristinakumberova.github.io</text>
+
+  <text x="1120" y="600" class="mono" font-size="14" text-anchor="end">Postaveno v Cursoru · Claude Opus 4.7</text>
+</svg>

@@ -1,0 +1,32 @@
+# Dependencies (none — but in case Tailwind CLI added later)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build output (none — but reserved)
+dist/
+build/
+.next/
+.cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Obsidian (in case repo cloned into vault context)
+.obsidian/
+
+# Local dev
+.env
+.env.local
+*.log
+
+# Backups
+*.bak
