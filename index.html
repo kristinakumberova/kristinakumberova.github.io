@@ -307,7 +307,7 @@ Nejsi: stratég, finanční modelář, právní poradce.</code></pre>
 
             <div id="tab-port" class="tab-panel hidden" role="tabpanel">
               <p class="text-sm text-text-primary leading-relaxed">
-                Vault je v markdownu a gitu — otevřu ho stejně v <strong>Cursoru</strong>, <strong>Claude Code</strong> i <strong>Codex CLI</strong>. Agent routing přes <code class="font-mono text-xs bg-bg-secondary px-1 rounded">.cursor/rules/</code> je Cursor-specific; v jiných nástrojích bych musela ekvivalentní pravidla napsat jinou formou (např. <code class="font-mono text-xs bg-bg-secondary px-1 rounded">AGENTS.md</code> pro Claude Code). Knowledge base, agenti, SOPs a frameworky se přenášejí beze změny.
+                Vault je v markdownu a gitu — otevřu ho stejně v <strong>Cursoru</strong>, <strong>Claude Code</strong> i <strong>Codex CLI</strong>. Každý runtime má vlastní adapter v jeho nativním formátu: Cursor čte <code class="font-mono text-xs bg-bg-secondary px-1 rounded">.cursor/rules/*.mdc</code>, Claude Code <code class="font-mono text-xs bg-bg-secondary px-1 rounded">CLAUDE.md</code> + <code class="font-mono text-xs bg-bg-secondary px-1 rounded">AGENTS.md</code>, Codex CLI <code class="font-mono text-xs bg-bg-secondary px-1 rounded">CODEX-RUNTIME.md</code>. Knowledge base, agenti, SOPs a frameworky jsou runtime-neutrální — sdílí je všechny tři beze změny.
               </p>
             </div>
 
